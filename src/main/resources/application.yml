@@ -1,0 +1,16 @@
+server: 
+  port: 8080
+spring: 
+  application:
+    name: venh
+  profiles:
+    active: dev
+  config: 
+    import: optional:configserver:http://localhost:8888
+    
+#actuator config
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
